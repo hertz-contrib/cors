@@ -20,5 +20,4 @@
 // Thanks for cors authors! Below is the source code information:
 // 		Repo: github.com/gin-contrib/cors
 //		Forked Version: v1.3.1
-
 package cors
