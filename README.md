@@ -11,7 +11,7 @@ This repo forks from [gin cors](https://github.com/gin-contrib/cors) and adapt i
 Download and install it:
 
 ```sh
-go get github.com/gin-contrib/cors
+go get github.com/hertz-contrib/cors
 ```
 
 Import it in your code:
