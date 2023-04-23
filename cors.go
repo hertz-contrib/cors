@@ -40,7 +40,6 @@ type cors struct {
 	allowCredentials bool
 	allowOriginFunc  func(string) bool
 	allowOrigins     []string
-	exposeHeaders    []string
 	normalHeaders    map[string]string
 	preflightHeaders map[string]string
 	wildcardOrigins  [][]string
@@ -122,7 +121,7 @@ func (cors *cors) applyCors(c *app.RequestContext) {
 		return
 	}
 
-	if bytes.Compare(c.Request.Method(), DefaultHeaderBytes[0]) == 0 {
+	if bytes.Equal(c.Request.Method(), DefaultHeaderBytes[0]) {
 		cors.handlePreflight(c)
 		defer c.AbortWithStatus(consts.StatusNoContent) // Using 204 is better than 200 when the request status is OPTIONS
 	} else {
