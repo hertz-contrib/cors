@@ -47,6 +47,7 @@ type Config struct {
 
 	// AllowOriginFunc is a custom function to validate the origin. It takes the origin
 	// as argument and returns true if allowed or false otherwise.
+	// AllowOrigins have a higher AllowOrigins have a higher priority than AllowOriginFunc
 	// It is recommended to use AllowOriginFunc without setting AllowOrigins.
 	AllowOriginFunc func(origin string) bool
 
